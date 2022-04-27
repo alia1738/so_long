@@ -5,7 +5,7 @@ LINK_GNL = -Lgnl -lgnl
 LINK_MINILIBX = -Lminilibx -lmlx -framework OpenGL -framework AppKit 
 CC = gcc
 CFLAGS = -Werror -Wextra -Wall -Iminilibx
-NAME = so_long
+NAME = so_long_bonus
 
 all: $(NAME)
 -include $(addprefix dep/,$(.df))
