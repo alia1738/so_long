@@ -1,0 +1,17 @@
+../used_graphics/back.xpm
+../used_graphics/ground.xpm
+../used_graphics/mello.xpm
+../used_graphics/p/d1.xpm
+../used_graphics/p/d2.xpm
+../used_graphics/p/d3.xpm
+../used_graphics/p/l1.xpm
+../used_graphics/p/l2.xpm
+../used_graphics/p/l3.xpm
+../used_graphics/p/r1.xpm
+../used_graphics/p/r2.xpm
+../used_graphics/p/r3.xpm
+../used_graphics/p/u1.xpm
+../used_graphics/p/u2.xpm
+../used_graphics/p/u3.xpm
+../used_graphics/flag/8.xpm
+../used_graphics/flag/26.xpm
