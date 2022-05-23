@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple_helpers.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Alia <Alia@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aalsuwai <aalsuwai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 17:24:37 by aalsuwai          #+#    #+#             */
-/*   Updated: 2022/04/23 11:58:03 by Alia             ###   ########.fr       */
+/*   Updated: 2022/05/23 18:45:26 by aalsuwai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,20 @@
 
 int	free_close(t_mlx *s)
 {
+	int	i;
+
+	i = -1;
+	while (++i < 26)
+	{
+		if (i < 16)
+			mlx_destroy_image(s->mlx, s->t[i].image);
+		if (i < 12)
+			mlx_destroy_image(s->mlx, s->p[i].image);
+		mlx_destroy_image(s->mlx, s->e[i].image);
+	}
+	mlx_destroy_image(s->mlx, s->g.image);
+	mlx_destroy_image(s->mlx, s->c.image);
+	mlx_destroy_image(s->mlx, s->b.image);
 	free_array(s->map);
 	if (!s->t_count)
 	{
