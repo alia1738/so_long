@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Alia <Alia@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aalsuwai <aalsuwai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 14:06:00 by aalsuwai          #+#    #+#             */
-/*   Updated: 2022/04/23 07:46:15 by Alia             ###   ########.fr       */
+/*   Updated: 2022/05/23 18:46:37 by aalsuwai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,8 @@ typedef struct s_mlx
 	int		e_w;
 	int		e_h;
 	int		c_count;
-	// int		t_count;
-	// int		t_move;
 
 	int		urlda[5];
-	// int		*t_w;
-	// int		*t_h;
 
 	char	**map;
 
@@ -52,7 +48,6 @@ typedef struct s_mlx
 	t_image	b;
 	t_image	p[12];
 	t_image	e[2];
-	// t_image	t[16];
 }	t_mlx;
 
 /*------------------------- colors -------------------------*/

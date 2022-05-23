@@ -30,6 +30,6 @@ fclean: clean
 re: fclean $(NAME)
 
 obj:
-	mkdir obj
+	@mkdir obj
 dep:
-	mkdir dep
+	@mkdir dep
