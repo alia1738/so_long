@@ -6,7 +6,7 @@
 /*   By: aalsuwai <aalsuwai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 17:24:37 by aalsuwai          #+#    #+#             */
-/*   Updated: 2022/05/23 18:45:26 by aalsuwai         ###   ########.fr       */
+/*   Updated: 2022/05/27 15:59:12 by aalsuwai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	free_close(t_mlx *s)
 	mlx_destroy_image(s->mlx, s->g.image);
 	mlx_destroy_image(s->mlx, s->c.image);
 	mlx_destroy_image(s->mlx, s->b.image);
+	mlx_destroy_window(s->mlx, s->window);
 	free_array(s->map);
 	if (!s->t_count)
 	{
