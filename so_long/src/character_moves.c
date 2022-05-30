@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   character_moves.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Alia <Alia@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aalsuwai <aalsuwai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 17:24:16 by aalsuwai          #+#    #+#             */
-/*   Updated: 2022/04/23 07:56:51 by Alia             ###   ########.fr       */
+/*   Updated: 2022/05/30 17:30:21 by aalsuwai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,6 @@ static void	do_if_left(t_mlx *s)
 	{
 		s->map[s->p_h][s->p_w] = 0;
 		s->c_count--;
-		// if (!s->c_count)
-		// 	mlx_put_image_to_window(s->mlx, s->window, s->e[1].image, \
-		// 	(s->p_w * s->b.w), (s->p_h * s->b.h));
 	}
 	if (s->map[s->p_h][s->p_w] != 'E')
 		mlx_put_image_to_window(s->mlx, s->window, s->b.image, \
@@ -72,9 +69,6 @@ static void	do_if_up(t_mlx *s)
 	{
 		s->map[s->p_h][s->p_w] = 0;
 		s->c_count--;
-		// if (!s->c_count)
-		// 	mlx_put_image_to_window(s->mlx, s->window, s->e[1].image, \
-		// 	(s->p_w * s->b.w), (s->p_h * s->b.h));
 	}
 	if (s->map[s->p_h][s->p_w] != 'E')
 		mlx_put_image_to_window(s->mlx, s->window, s->b.image, \
@@ -98,9 +92,6 @@ static void	do_if_down(t_mlx *s)
 	{
 		s->map[s->p_h][s->p_w] = 0;
 		s->c_count--;
-		// if (!s->c_count)
-		// 	mlx_put_image_to_window(s->mlx, s->window, s->e[1].image, \
-		// 	(s->p_w * s->b.w), (s->p_h * s->b.h));
 	}
 	if (s->map[s->p_h][s->p_w] != 'E')
 		mlx_put_image_to_window(s->mlx, s->window, s->b.image, \

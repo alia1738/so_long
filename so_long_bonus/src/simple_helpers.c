@@ -6,7 +6,7 @@
 /*   By: aalsuwai <aalsuwai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 17:24:37 by aalsuwai          #+#    #+#             */
-/*   Updated: 2022/05/27 15:59:12 by aalsuwai         ###   ########.fr       */
+/*   Updated: 2022/05/30 17:58:30 by aalsuwai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,17 @@ void	get_window_h(t_mlx *s, char *file)
 	int	fd;
 
 	fd = open(file, O_RDONLY);
+	if (fd == -1)
+	{
+		printf("%sError: fatal error%s\n", RED, RESET);
+		exit(1);
+	}
 	s->map = malloc(s->window_w * sizeof(char *));
 	if (!s->map)
+	{
+		printf("%sError: fatal error%s\n", RED, RESET);
 		exit(1);
+	}
 	s->map[s->window_h] = get_next_line(fd);
 	while (s->map[s->window_h])
 		s->map[++s->window_h] = get_next_line(fd);
@@ -91,13 +99,13 @@ void	get_window_w(t_mlx *s, char *file)
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
 	{
-		printf("%sError: invalid file%s\n", RED, RESET);
+		printf("%sError: fatal error%s\n", RED, RESET);
 		exit(1);
 	}
 	line = get_next_line(fd);
 	if (line == 0)
 	{
-		printf("%sError: invalid file%s\n", RED, RESET);
+		printf("%sError: fatal error%s\n", RED, RESET);
 		exit(1);
 	}
 	while (line[s->window_w])

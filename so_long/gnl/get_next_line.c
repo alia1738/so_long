@@ -6,7 +6,7 @@
 /*   By: aalsuwai <aalsuwai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 18:04:07 by aalsuwai          #+#    #+#             */
-/*   Updated: 2021/12/11 18:31:18 by aalsuwai         ###   ########.fr       */
+/*   Updated: 2022/05/30 17:53:44 by aalsuwai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static char	*ft_strjoin(char *s1, char *s2)
 	else
 		ii = s_len(s1) + s_len(s2);
 	s = malloc((ii + 1) * sizeof(char));
-	if (s == 0)
+	if (!s)
 		return (0);
 	ii = 0;
 	i = 0;

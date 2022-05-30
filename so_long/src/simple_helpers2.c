@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple_helpers2.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Alia <Alia@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aalsuwai <aalsuwai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 17:24:43 by aalsuwai          #+#    #+#             */
-/*   Updated: 2022/04/27 13:57:30 by Alia             ###   ########.fr       */
+/*   Updated: 2022/05/30 17:40:30 by aalsuwai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ void	before_mlx_init(t_mlx *s, int argc, char *arg)
 	check_map_have(s, 'C') < 1 || check_map_have(s, 'E') != 1)
 	{
 		printf("%sError: check the map%s\n", RED, RESET);
-		free_close(s);
+		free_array(s->map);
+		exit(1);
 	}
 }
 

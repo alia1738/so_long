@@ -11,21 +11,29 @@ all: $(NAME)
 -include $(addprefix dep/,$(.df))
 
 $(NAME): obj dep $(addprefix obj/,$(.of))
-	$(MAKE) -sC gnl all
-	$(MAKE) -sC minilibx all
+	@$(MAKE) -sC gnl all
+	@$(MAKE) -sC minilibx all
+	@printf "\x1B[33m"
 	$(CC) $(addprefix obj/,$(.of)) $(LINK_GNL) $(LINK_MINILIBX) -o $(NAME)
+	@printf "\x1B[0m"
 
 obj/%.o: src/%.c src/so_long.h
+	@printf "\x1B[36m"
 	$(CC) -c $(CFLAGS) $< -o $@ -MD -MF $(@:obj/%.o=dep/%.d)
+	@printf "\x1B[0m"
 
 clean:
-	$(MAKE) -sC gnl clean
-	$(MAKE) -sC minilibx clean
+	@$(MAKE) -sC gnl clean
+	@$(MAKE) -sC minilibx clean
+	@printf "\x1B[31m"
 	rm -rf $(addprefix obj/,$(.of)) $(addprefix dep/,$(.df)) obj dep
+	@printf "\x1B[0m"
 
 fclean: clean
-	$(MAKE) -sC gnl fclean
+	@$(MAKE) -sC gnl fclean
+	@printf "\x1B[31m"
 	rm -f $(NAME)
+	@printf "\x1B[0m"
 
 re: fclean $(NAME)
 

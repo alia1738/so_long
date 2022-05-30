@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple_helpers2.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Alia <Alia@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aalsuwai <aalsuwai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 17:24:43 by aalsuwai          #+#    #+#             */
-/*   Updated: 2022/04/23 11:58:06 by Alia             ###   ########.fr       */
+/*   Updated: 2022/05/30 17:56:15 by aalsuwai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,16 @@ void	do_turtle_stuff(t_mlx *s)
 	i = 0;
 	s->t_h = malloc(s->t_count * sizeof(int));
 	if (!s->t_h)
-		free_close(s);
+	{
+		printf("%sError: fatal error%s\n", RED, RESET);
+		exit(1);
+	}
 	s->t_w = malloc(s->t_count * sizeof(int));
 	if (!s->t_w)
-		free_close(s);
+	{
+		printf("%sError: fatal error%s\n", RED, RESET);
+		exit(1);
+	}
 	while (i < s->t_count)
 	{
 		s->t_h[i] = 0;
@@ -66,7 +72,13 @@ void	before_mlx_init(t_mlx *s, int argc, char *arg)
 	check_map_have(s, 'C') < 1 || check_map_have(s, 'E') != 1)
 	{
 		printf("%sError: check the map%s\n", RED, RESET);
-		free_close(s);
+		free_array(s->map);
+		if (!s->t_count)
+		{
+			free(s->t_h);
+			free(s->t_w);
+		}
+		exit(1);
 	}
 	turtles_count(s);
 	if (s->t_count)

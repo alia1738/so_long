@@ -6,7 +6,7 @@
 /*   By: aalsuwai <aalsuwai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 18:04:12 by aalsuwai          #+#    #+#             */
-/*   Updated: 2021/12/10 19:29:54 by aalsuwai         ###   ########.fr       */
+/*   Updated: 2022/05/30 17:56:52 by aalsuwai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,8 @@ void	*ft_calloc(ssize_t count, ssize_t size)
 
 	i = 0;
 	s = (void *)malloc(count * size);
-	if (s == 0)
-	{
+	if (!s)
 		return (NULL);
-	}
 	while (i < count * size)
 	{
 		((char *)s)[i] = 0;

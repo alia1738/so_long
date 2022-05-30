@@ -6,7 +6,7 @@
 /*   By: aalsuwai <aalsuwai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 17:24:37 by aalsuwai          #+#    #+#             */
-/*   Updated: 2022/05/27 15:58:42 by aalsuwai         ###   ########.fr       */
+/*   Updated: 2022/05/30 17:58:47 by aalsuwai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	free_close(t_mlx *s)
 	int	i;
 
 	i = -1;
-	while (++i < 13)
+	while (++i < 12)
 	{
-		if (i < 3)
+		if (i < 2)
 			mlx_destroy_image(s->mlx, s->e[i].image);
 		mlx_destroy_image(s->mlx, s->p[i].image);
 	}
@@ -52,10 +52,6 @@ void	initialize(t_mlx *s)
 	s->window_h = 0;
 	s->window_w = 0;
 	s->c_count = 0;
-	// s->t_count = 0;
-	// s->t_move = 0;
-	// s->t_h = 0;
-	// s->t_w = 0;
 	s->p_h = 0;
 	s->p_w = 0;
 	s->e_h = 0;
@@ -67,9 +63,17 @@ void	get_window_h(t_mlx *s, char *file)
 	int	fd;
 
 	fd = open(file, O_RDONLY);
+	if (fd == -1)
+	{
+		printf("%sError: fatal error%s\n", RED, RESET);
+		exit(1);
+	}
 	s->map = malloc(s->window_w * sizeof(char *));
 	if (!s->map)
+	{
+		printf("%sError: fatal error%s\n", RED, RESET);
 		exit(1);
+	}
 	s->map[s->window_h] = get_next_line(fd);
 	while (s->map[s->window_h])
 		s->map[++s->window_h] = get_next_line(fd);
@@ -84,13 +88,13 @@ void	get_window_w(t_mlx *s, char *file)
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
 	{
-		printf("%sError: invalid file%s\n", RED, RESET);
+		printf("%sError: fatal error%s\n", RED, RESET);
 		exit(1);
 	}
 	line = get_next_line(fd);
 	if (line == 0)
 	{
-		printf("%sError: invalid file%s\n", RED, RESET);
+		printf("%sError: fatal error%s\n", RED, RESET);
 		exit(1);
 	}
 	while (line[s->window_w])
