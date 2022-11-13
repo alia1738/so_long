@@ -1,5 +1,7 @@
 ![Alt text](./so-long.png?raw=true "Title")
+
 ![](https://github.com/alia1738/so_long/blob/main/so-long.gif)
+
 Two-dimensional game staring a cat who loves watermelons. The cat wears a watermelon suit, collects watermelons, and avoids evil turtles.
 
 ## Usage
