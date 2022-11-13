@@ -1,2 +1,2 @@
-![plot] (./so-long.png)
+![Alt text](./so-long.png?raw=true "Title")
 
