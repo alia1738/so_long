@@ -3,7 +3,6 @@
 two-dimensional game staring a cat who loves watermelons. The cat wears a watermelon suit, collects watermelons, and avoids evil turtles.
 
 ## Usage
-rm 
 First you need to compile.
 ```bash
 $> make
